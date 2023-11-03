@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+abstract Persona
+
+class Estudiante
+class Profesor
+class Empleado
+
+Profesor --|> Persona
+Estudiante --|> Persona
+Empleado --|> Persona
+ 
+@enduml
+
+Los estudiantes, los profesores y los empleados son personas

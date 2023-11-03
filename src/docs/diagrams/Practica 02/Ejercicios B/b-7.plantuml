@@ -1,0 +1,12 @@
+@startuml
+class Caracterizacion
+class Criterio
+class ElementoClasificado
+
+Caracterizacion --> "1..*" Criterio
+ElementoClasificado .. (Caracterizacion, Criterio) 
+
+@enduml
+
+Una caracterización se fundamenta en al menos un criterio, un elemento clasificado se
+genera a partir de una caracterización que depende del criterio utilizado.

@@ -1,0 +1,37 @@
+@startuml
+
+abstract class Persona{
+    #telefono
+    #nombre
+    #direccion
+}
+class Entrenador{
+    #nivelAcreditacion
+    #añosExperiencia
+}
+class Jugador{
+    #numero
+    #posicion
+}
+class EquipoVolley {
+    #nombre
+    #registro
+}
+class Capitan
+class Juego{
+    #localidad
+    #puntuacion
+
+}
+
+Persona --|> Jugador
+Persona --|> Entrenador
+
+Capitan --|> Jugador
+
+EquipoVolley *-- Capitan
+EquipoVolley *-- "6..20" Jugador: Conforman
+EquipoVolley "0..*" o-- Entrenador : Entrena
+
+Juego *-- "2" EquipoVolley : Compiten en
+@enduml

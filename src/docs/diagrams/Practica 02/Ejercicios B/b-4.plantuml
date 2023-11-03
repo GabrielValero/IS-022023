@@ -1,0 +1,8 @@
+@startuml
+class Triangulo
+class Lado
+
+Lado --* "3  " Triangulo 
+@enduml
+
+Un triángulo es un polígono que esta formado por 3 lados

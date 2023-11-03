@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+class Jugadores
+class Estadio
+class TeamBaseball
+
+TeamBaseball "*" *-- Jugadores :forman parte
+TeamBaseball o-- "1..*" Estadio : se asigna
+@enduml
+
+Un equipo de baseball está formado por jugadores y tienen asignado como homeclub un
+estadio

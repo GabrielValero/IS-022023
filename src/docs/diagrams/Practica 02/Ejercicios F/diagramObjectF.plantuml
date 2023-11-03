@@ -1,0 +1,70 @@
+@startuml
+object "Panamericana" as Juego{
+    localidad = Chile
+    Puntuacion = 13-11
+}
+object "Equipo" as Equipo1{
+    nombre = Venezuela
+    registro = 57
+}
+object "Equipo" as Equipo2{
+    nombre = Colombia
+    registro = 13
+}
+object "Capitan" as Capitan1{
+    telefono = 0414 4754480
+    nombre = Benito
+    direccion = Maracay
+    numero = 10
+    posicion = Armador
+}
+object "Capitan" as Capitan2{
+    telefono = 0414 1111111
+    nombre = Maria
+    direccion = Bogota
+    numero = 13
+    posicion = Punta
+}
+object "Entrenador" as Entrenador1{
+    telefono = 0412 2222222
+    nombre = Johan
+    direccion = Caracas
+    añosExperiencia = 20
+    nivelAcreditacion = Institucional
+}
+object "Entrenador" as Entrenador2{
+    telefono = 0412 3333333
+    nombre = Gabriel
+    direccion = Bogota
+    añosExperiencia = 14
+    nivelAcreditacion = Institucional
+}
+object "Jugador" as Jugador1{
+    telefono = 0414 5555555
+    nombre = Alonso
+    direccion = Maracay
+    numero = 1
+    posicion = Central
+}
+object "Jugador" as Jugador2{
+    telefono = 0414 6666666
+    nombre = Arnold
+    direccion = Medellin
+    numero = 33
+    posicion = Libero
+}
+
+Equipo1 *-- Capitan1
+Equipo1 *-- Jugador1
+Equipo1 *-- Entrenador1
+
+
+
+Equipo2 *-- Capitan2
+Equipo2 *-- Jugador2
+Equipo2 *-- Entrenador2
+
+Juego *-- (Equipo1, Equipo2)
+
+
+@enduml
