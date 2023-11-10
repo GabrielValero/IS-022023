@@ -1,0 +1,17 @@
+@startuml
+
+state State2 <<choice>>
+state State3 <<choice>>
+
+[*] --> Pedido : encargarP()
+Pedido --> Validado : validarP()
+Validado --> Pagado : cobrarP()
+Pagado --> State2
+State2--> EnviadoUrgente : [urgente]
+State2 --> EnviadoNormal: [no urgente]
+EnviadoUrgente --> State3
+EnviadoNormal --> State3
+State3 --> Entregado
+Entregado --> [*]
+
+@enduml

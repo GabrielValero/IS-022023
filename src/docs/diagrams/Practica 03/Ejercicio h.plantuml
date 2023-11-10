@@ -1,0 +1,40 @@
+@startuml
+object ": Actor" as user
+object ": Registro" as rgtr
+object ": CatalogoProductos " as catalogo
+object ": Venta" as venta
+
+object ": List" as list
+object ": LineaVenta" as linea
+
+user -r-> rgtr
+
+note on link
+    1. crearNuevaVenta()
+    2. introducirArticulo()
+    3. finalizarVenta()
+end note
+
+rgtr -u-> catalogo
+
+note on link
+    0. Registro()
+    2.1. getEspecificacion(id)
+end note
+
+rgtr -d-> venta
+note on link
+    2.2. crearLineaVenta(espec, cant)
+end note
+
+venta -d-> list
+note on link
+    2.3. añadir(new LineaVenta)
+end note
+
+list -r-> linea
+note on link
+    2.3.1. new LineaVenta(espec, cant)
+end note
+
+@enduml
