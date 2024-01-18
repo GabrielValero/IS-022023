@@ -1,0 +1,48 @@
+@startuml
+class TurnOnDevices{
+    +main(Strings[] args)
+    +turnOnDevices(Connectable device)
+}
+
+class Connectable <<interface>>{
+    +turnOn()
+    +turnOff()
+    +isOn()
+}
+
+class Lamp{
+    +turnOn()
+    +turnOff()
+    +isOn()
+}
+class Computer{
+    +turnOn()
+    +turnOff()
+    +isOn()
+}
+
+class CoffeMaker{
+    +on()
+    +off()
+    +isOff()
+}
+class CMAdapter{
+    -adaptee: CoffeMaker
+    +turnOn()
+    +turnOff()
+    +isOn()
+}
+note right
+    turnOn() retorna on()
+    turnOff() retorna off()
+    isOn() retorna isOff()
+end note
+
+TurnOnDevices -r-> Connectable
+Lamp --|> Connectable
+Computer --|> Connectable
+CMAdapter --|> Connectable
+CMAdapter --> CoffeMaker
+
+
+@enduml
